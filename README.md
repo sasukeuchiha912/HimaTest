@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://telegra.ph/file/56811b69cbcece20bbebf.jpg">
+  <img src="https://telegra.ph/file/7ba6536e75495cdc6ceb1.jpg">
 </p>
 
 <h4><p align="center"> Himawari Robot </p></h4>
