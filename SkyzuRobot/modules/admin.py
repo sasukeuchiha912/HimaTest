@@ -832,6 +832,7 @@ def adminlist(update, context):
 @bot_admin
 @can_promote
 @user_admin
+@loggable
 def promote_button(update: Update, context: CallbackContext):
      query: Optional[CallbackQuery] = update.callback_query
      user: Optional[User] = update.effective_user 
