@@ -869,7 +869,8 @@ def promote_button(update: Update, context: CallbackContext):
                 except KeyError:
                     pass
                 bot.answer_callback_query(query.id, "Admins cache refreshed!")
-    except BadRequest as excp:
+    
+        except BadRequest as excp:
         if excp.message not in [
             "Message is not mod",
             "User_id_invalid",
