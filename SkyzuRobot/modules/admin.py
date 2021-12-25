@@ -829,7 +829,7 @@ def adminlist(update, context):
 
     #for each_bot in bot_admin_list:
     
-@bot_admin
+#@bot_admin
 @can_promote
 @user_admin
 @loggable
@@ -839,7 +839,8 @@ def promote_button(update: Update, context: CallbackContext):
      chat = update.effective_chat
      bot: Optional[Bot] = context.bot
      mode = query.data.split("_")[1]
-     try: 
+    
+    try:
         if is_user_admin(chat, user.id):
             if mode == "demote":
                 user_id = query.data.split("_")[2]
@@ -866,16 +867,13 @@ def promote_button(update: Update, context: CallbackContext):
             elif mode == "refresh":
                 try:
                     ADMIN_CACHE.pop(update.effective_chat.id)
+                    bot.answer_callback_query(query.id, "Admins cache refreshed!")
                 except KeyError:
                     pass
-                bot.answer_callback_query(query.id, "Admins cache refreshed!")
+                    
                 except BadRequest as excp:
-                if excp.message not in [
-               "Message is not mod",
-               "User_id_invalid",
-               "Message Deleted",
-        ]:
-            LOGGER.exception("Exception in promote buttons. %s", str(query.data))
+                    if excp.message not in ["Message is not mod", "User_id_invalid", "Message Deleted"]:
+                        LOGGER.exception("Exception in promote buttons. %s", str(query.data))
 
 
 
