@@ -12,11 +12,11 @@ from SkyzuRobot.modules.helper_funcs.chat_status import (
     can_pin,
     can_promote,
     is_user_admin,
-    user_can_promote,
     connection_status,
     user_admin,
     ADMIN_CACHE,
 )
+from SkyzuRobot.modules.helper_funcs.admin_rights import ( user_can_changeinfo, user_can_promote,)
 
 from SkyzuRobot.modules.helper_funcs.extraction import (
     extract_user,
