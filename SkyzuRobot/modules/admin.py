@@ -829,16 +829,15 @@ def adminlist(update, context):
 
     #for each_bot in bot_admin_list:
     
-
+@bot_admin
+@can_promote
 @user_admin
-@user_can_promote
 def promote_button(update: Update, context: CallbackContext):
      query: Optional[CallbackQuery] = update.callback_query
      user: Optional[User] = update.effective_user 
      chat = update.effective_chat
      bot: Optional[Bot] = context.bot
-
-    mode = query.data.split("_")[1]
+     mode = query.data.split("_")[1]
     try:
         if is_user_admin(chat, user.id):
             if mode == "demote":
