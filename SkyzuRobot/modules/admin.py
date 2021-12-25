@@ -841,7 +841,8 @@ def promote_button(update: Update, context: CallbackContext):
      mode = query.data.split("_")[1]
    
         try:
-        if is_user_admin(chat, user.id):
+       
+    if is_user_admin(chat, user.id):
             if mode == "demote":
                 user_id = query.data.split("_")[2]
                 user_member = chat.get_member(user_id)
