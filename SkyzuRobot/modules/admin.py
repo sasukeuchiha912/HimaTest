@@ -833,10 +833,10 @@ def adminlist(update, context):
 @user_admin
 @user_can_promote
 def promote_button(update: Update, context: CallbackContext):
-    query = update.callback_query
-    user = update.effective_user
-    chat = update.effective_chat
-    bot = context.bot
+     query: Optional[CallbackQuery] = update.callback_query
+     user: Optional[User] = update.effective_user 
+     chat = update.effective_chat
+     bot: Optional[Bot] = context.bot
 
     mode = query.data.split("_")[1]
     try:
