@@ -98,9 +98,7 @@ buttons = [
         InlineKeyboardButton(text="Try Inline", switch_inline_query_current_chat=""),
     ],
     [
-        InlineKeyboardButton(
-            text="🌐 Network", url="https://t.me/SHINOBINET"
-        ),
+        InlineKeyboardButton(text="🌐 Network", url="https://t.me/SHINOBINET"),
         InlineKeyboardButton(text="Support 🥂", url=f"https://t.me/{SUPPORT_CHAT}"),
     ],
     [
@@ -202,13 +200,7 @@ def start(update: Update, context: CallbackContext):
                     update.effective_chat.id,
                     HELPABLE[mod].__help__,
                     InlineKeyboardMarkup(
-                        [
-                            [
-                                InlineKeyboardButton(
-                                    text="🔙", callback_data="help_back"
-                                )
-                            ]
-                        ]
+                        [[InlineKeyboardButton(text="🔙", callback_data="help_back")]]
                     ),
                 )
 
@@ -388,9 +380,7 @@ def Skyzu_about_callback(update, context):
                         InlineKeyboardButton(
                             text="Admins", callback_data="Skyzu_admin"
                         ),
-                        InlineKeyboardButton(
-                            text="Notes", callback_data="Skyzu_notes"
-                        ),
+                        InlineKeyboardButton(text="Notes", callback_data="Skyzu_notes"),
                     ],
                     [
                         InlineKeyboardButton(
@@ -406,9 +396,7 @@ def Skyzu_about_callback(update, context):
                         ),
                     ],
                     [
-                        InlineKeyboardButton(
-                            text="🔙", callback_data="Skyzu_back"
-                        ),
+                        InlineKeyboardButton(text="🔙", callback_data="Skyzu_back"),
                     ],
                 ]
             ),
@@ -465,7 +453,9 @@ def Skyzu_about_callback(update, context):
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
-                        InlineKeyboardButton(text="Support 🔗", url="t.me/himawarisupport"),
+                        InlineKeyboardButton(
+                            text="Support 🔗", url="t.me/himawarisupport"
+                        ),
                         InlineKeyboardButton(
                             text="Updates 🚨", url="https://t.me/HimawariUpdates"
                         ),
